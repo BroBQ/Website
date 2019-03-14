@@ -33,6 +33,8 @@
 *   [A website "Where adults learn to read with free, illustrated, interactive books."](http://readtolearn.online)
 *   [Website with product for: analysing commits into graphs, automated code review](https://codeclimate.com/)
 *   [Blog of Backblaze, also quite cheap cloud storage](https://www.backblaze.com/blog/)
+*   [List of projects that were killed by Google](https://killedbygoogle.com/)
+*   [Intel website targeting code](https://software.intel.com/)
 
 # How to enter open source coding
 
