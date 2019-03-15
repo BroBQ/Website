@@ -122,6 +122,7 @@
 *   [Permament clipoard](https://chrome.google.com/webstore/detail/permanent-clipboard/hilkjcfodmbdgpadbpehimibheopoccb)
 *   [Dropdown Search](https://chrome.google.com/webstore/detail/dropdown-search/kgjaddbcmpmacilgaekjfelhdebfjgib)
 *   [uBlock Origin - best adblock!](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
+*   [FireShot - best tool for screenshotting web pages, allows to capture whole page at once](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)
 
 ## Android Apps
 
