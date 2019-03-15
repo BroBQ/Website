@@ -25,7 +25,7 @@
 *   [real time regex creator](https://regex101.com/)
 *   [<span style="color: red;">POLISH</span> bash quick tutorial](resources/bash.html)
 *   [short and colorful git cheat sheet](http://www.cheat-sheets.org/saved-copy/Git_Cheat_Sheet_grey.pdf)
-*   [github git sheat sheet](http://www.cheat-sheets.org/saved-copy/github-git-cheat-sheet.pdf)
+*   [github git cheat sheet](http://www.cheat-sheets.org/saved-copy/github-git-cheat-sheet.pdf)
 *   [another git cheat sheet](http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf)
 
 # Just interesting
