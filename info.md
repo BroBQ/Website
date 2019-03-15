@@ -35,6 +35,7 @@
 *   [Blog of Backblaze, also quite cheap cloud storage](https://www.backblaze.com/blog/)
 *   [List of projects that were killed by Google](https://killedbygoogle.com/)
 *   [Intel website targeting code](https://software.intel.com/)
+*   [Website with instructions how to tie shoelaces better and faster, also some IT info](https://www.fieggen.com/shoelace/index.htm)
 
 # How to enter open source coding
 
