@@ -14,7 +14,7 @@
 *   [Haiku Deck](https://haikudeck.com)
 *   [Visme](https://visme.co)
 *   [Prezi](https://prezi.com/)
-* [Togetherjs - colaborating over website](https://togetherjs.com/)
+*	[Togetherjs - colaborating over website](https://togetherjs.com/)
 
 # Cheatsheets
 
