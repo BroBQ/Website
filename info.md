@@ -1,4 +1,4 @@
-# Usefull stuff for websites
+<!-- # Usefull stuff for websites
 
 *   [fonts.google.com](https://fonts.google.com)
 *   [css-tricks.com](https://css-tricks.com)
@@ -6,9 +6,9 @@
 *   [w3schools.com](https://w3schools.com)
 *   [HTML5 UP - free responsive websites templates](https://html5up.net/)
 *   [convert html to markdown](https://www.browserling.com/tools/html-to-markdown)
-*   [convert markdown to html](https://www.browserling.com/tools/markdown-to-html)
+*   [convert markdown to html](https://www.browserling.com/tools/markdown-to-html) -->
 
-# Making presentations
+<!-- # Making presentations
 
 *   [Canva](https://canva.com)
 *   [Haiku Deck](https://haikudeck.com)
@@ -35,9 +35,9 @@
 *   [Blog of Backblaze, also quite cheap cloud storage](https://www.backblaze.com/blog/)
 *   [List of projects that were killed by Google](https://killedbygoogle.com/)
 *   [Intel website targeting code](https://software.intel.com/)
-*   [Website with instructions how to tie shoelaces better and faster, also some IT info](https://www.fieggen.com/shoelace/index.htm)
+*   [Website with instructions how to tie shoelaces better and faster, also some IT info](https://www.fieggen.com/shoelace/index.htm) -->
 
-# How to enter open source coding
+<!-- # How to enter open source coding
 
 *   [Twitter notifications](https://twitter.com/first_tmrs_only)
 *   [Links - Github](https://github.com/MunGell/awesome-for-beginners)
@@ -49,9 +49,9 @@
 
 ## Would you like to make a game?
 
-1.  [SFML - Simple and Fast Multimedia Library](https://www.sfml-dev.org/)
+1.  [SFML - Simple and Fast Multimedia Library](https://www.sfml-dev.org/) -->
 
-# Scripting for Google Sheets
+<!-- # Scripting for Google Sheets
 
 *   [zapier.com/learn/google-sheets](https://zapier.com/learn/google-sheets/google-apps-script-tutorial/)
 
@@ -69,9 +69,9 @@
 *   [selenium javascript - getting started](https://help.crossbrowsertesting.com/selenium-testing/getting-started/javascript/)
 *   [#JAVA tutorial for selenium](https://wiki.saucelabs.com/display/DOCS/Getting+Started+with+Selenium+for+Automated+Website+Testing)
 
-*   [guide to web automation](https://hackernoon.com/guide-to-web-automation-889557804453)
+*   [guide to web automation](https://hackernoon.com/guide-to-web-automation-889557804453) -->
 
-# Agile methodologies
+<!-- # Agile methodologies
 
 *   [kanbanflow.com - Kanban methodology, free and paid version](https://kanbanflow.com/)
 *   [Todoist - tasks tracker, free and paid](https://todoist.com/)
@@ -99,10 +99,10 @@
 *   [UltraISO - managing image file formats and burning them](https://www.ultraiso.com/)
 *   [HWiNFO - hadware analysis](https://www.hwinfo.com/)
 *   [CPU-Z - detailed info about CPU, memory, motherboard](https://www.cpuid.com/softwares/cpu-z.html)
-*   [WinDirStat - creates map of disk usage](https://windirstat.net/)
+*   [WinDirStat - creates map of disk usage](https://windirstat.net/) -->
 
 
-## Coding software
+<!-- ## Coding software
 
 *   [Visual Studio Code - outsatanding multitool for coding](https://code.visualstudio.com/)
 
@@ -115,23 +115,23 @@
 *   <a href=""></a>
 
 *   [Qt IDE - code editor targeting GUI aps with Qt libraries, also awesome C++ IDE](https://www.qt.io/)
-*   [Visual Studio](https://visualstudio.microsoft.com/)
+*   [Visual Studio](https://visualstudio.microsoft.com/) -->
 
-## Chrome plugins
+<!-- ## Chrome plugins
 
 *   [Permament clipoard](https://chrome.google.com/webstore/detail/permanent-clipboard/hilkjcfodmbdgpadbpehimibheopoccb)
 *   [Dropdown Search](https://chrome.google.com/webstore/detail/dropdown-search/kgjaddbcmpmacilgaekjfelhdebfjgib)
 *   [uBlock Origin - best adblock!](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm)
-*   [FireShot - best tool for screenshotting web pages, allows to capture whole page at once](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)
+*   [FireShot - best tool for screenshotting web pages, allows to capture whole page at once](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg) -->
 
-## Android Apps
+<!-- ## Android Apps
 
 *   [Calculator++ - Best calculator for Android](https://play.google.com/store/apps/details?id=org.solovyev.android.calculator&hl=en_US)
 *   [Free navigation for Android, has many features, like punlic transport, offilne maps, maps of shopping centers](https://play.google.com/store/apps/details?id=com.here.app.maps)
 *   [App for browsing reddit, definietly better than official app](https://play.google.com/store/apps/details?id=com.andrewshu.android.reddit)
-*   [Your screen is too bright? Get it dimmed with Screen Filter](https://play.google.com/store/apps/details?id=com.haxor)
+*   [Your screen is too bright? Get it dimmed with Screen Filter](https://play.google.com/store/apps/details?id=com.haxor) -->
 
-## Operating systems
+<!-- ## Operating systems
 
 *   [Ubuntu - most usefull operating system based on Uniux](https://www.ubuntu.com/)
 *   [Hiren's BootCD - rescue, hardware identyfiaction software](https://www.hirensbootcd.org/)
@@ -152,4 +152,4 @@
 
 # Cisco
 
-*   [<span style="color: red">POLISH</span> Cisco resources](resources/Cisco)
+*   [<span style="color: red">POLISH</span> Cisco resources](resources/Cisco) -->
