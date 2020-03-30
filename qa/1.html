@@ -1,0 +1,660 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Encyklopedia QA</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets_qa/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets_qa/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Encyklopedia QA</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Strona główna</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Podstawy testowania cz. 1</h1>
+				<h2>Co to jest testowanie</h2>
+				Testowanie opera się na walidacji oprogramowania i weryfikacji, any działało zgodnie z dokumentacją.
+				<ol>
+					<h3>V V T czyli:</h3>
+					<li>Testowanie (Testing): jak dobry jest (będzie) system?</li>
+					<li>Weryfikacja (Verification): czy robimy system dobrze?</li>
+					<li>Walidacja (Validation): czy robimy dobry system?</li>
+				</ol>
+				<hr>
+				<h2>Weryfikacja</h2>
+
+				Z definicji:
+				<br>
+				<b>Weryfikacja</b> polega na upewnieniu się, że produkt będący rezultatem
+				danego etapu rozwoju systemu jest spójny z założeniami wejściowymi
+				tego etapu (także z reprezentacją utworzoną na etapie poprzedzającym)
+				<hr>
+				<h2>Walidacja</h2>
+
+				<b>Walidacja</b> polega na upewnieniu się, że to co budujemy jest tym, o co nam chodziło.
+				<ul>
+					<li>Czy robimy właściwą rzecz? Bo można robić dobrze rzeczy bezsensowne...</li>
+					<li>Uwaga: to wymagania stanowią obraz potrzeb (oczekiwań) użytkownika!</li>
+				</ul>
+
+				<hr>
+				<h2>Wczesne testowanie</h2>
+
+				Testowanie we wczesnych stadiach rozwoju oprogramowania pozwala zmniejszyć koszty usuwania defektów;
+				im później wykryty zostanie błąd tym większy jest koszt usunięcia defektu.
+
+				<hr>
+
+				<h2>Zasadniczym celem testowania jest wykrycie defektów</h2>
+				<div class="table-wrapper">
+					<table class="alt">
+						<tbody>
+							<tr>
+								<td>pomyłka (bład) człowieka</td>
+								<td><b>to może być</b></td>
+								<td>usterka (defekt, bug, pluskwa)</td>
+								<td><b>to może być</b></td>
+								<td>błąd</td>
+								<td><b>to może być</b></td>
+								<td>awaria</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<ul>
+					<li>usterka (defekt) – niepoprawny krok, proces lub definicja danych w programie</li>
+					<li>awaria – niemożność wykonania jakiejś funkcji przez program</li>
+					<li>błąd – stan lub zachowanie programu (systemu) odbiegające od oczekiwań</li>
+				</ul>
+
+				Testowanie nie jest w stanie wykazać poprawności programu – może tylko wykazać obecność w nim defektów.
+				Można testować w nieskończoność, ale nie jest możliwe wykazanie, iż system jest wolny od błędów.
+
+				<hr>
+
+				<h2>Co jest testowaniem?</h2>
+				Minimalny zbiór warunków, pozwalających uważać eksperymenty z programem za testowanie:
+				<ul>
+					<li>środowisko musi umożliwiać nadzorowane wykonywanie się programu</li>
+					<li>dane dostarczane programowi dla obliczeń powinny reprezentować zakresy wartości istotne dla jego
+						działania</li>
+					<li>dla każdego zestawu danych wejściowych przed wykonaniem eksperymentu i rejestracją wyników
+						powinny być określone oczekiwane wyniki</li>
+					<li>musi zostać przeprowadzona analiza uzyskanych wyników pod kątem ich zgodności z oczekiwanymi
+					</li>
+				</ul>
+
+				<hr>
+
+				<h2>Model testowania programów</h2>
+				<span class="image fit">
+					<img src="images/model testowania programów.png" alt="Model testowania programów"
+						style="object-fit: contain;">
+				</span>
+				<b>Testowanie</b> – całość procesu, włącznie z analizą uzyskiwanych obserwacji.<br>
+				<b>Scenariusze testowe</b> to serie przypadków testowych dobrane według pewnej strategii, stanowiącej
+				zbiór
+				reguł ich doboru.<br>
+				<b>Instrumentacja kodu</b> polega na takim przygotowaniu kodu, by można było obserwować i rejestrować
+				zdarzenia
+				w działaniu programu.<br>
+				<b>Przypadki testowe</b> dobieramy, by obserwować interesujące nas sytuacje.<br>
+				<b>Model środowiska</b> reprezentuje operatorów, sprzęt i oprogramowanie nieodzowne do działania
+				programu.<br>
+				<b>Model programu</b> reprezentuje wszystkie istotne szczegóły działania kodu programu (model np.
+				przepływu sterowania, danych, czy model zdarzeniowy).<br>
+				<b>Model błędu</b> pozwala klasyfikować działania programu, co jest niezbędne do prawidłowego wykrywania
+				błędów.
+
+				<hr>
+
+				<h2>Cykl życia testu</h2>
+				<span class="image fit">
+					<img src="images/cykl życia testu.png" alt="Cykl życia testu">
+				</span>
+
+				<hr>
+
+				<h2>Wprowadzenie do zaprojektowania testów</h2>
+				<b>Przypadek testowy</b> – obserwacja działania programu, związana z interpretacją interesującego nas
+				zdarzenia, danymi, funkcjami.
+
+				<p>Przykładowa tabela wskazująca przypadek testowy:</p>
+
+				<div class="table-wrapper">
+					<table class="alt">
+						<thead>
+							<tr>
+								<th>Przypadek testowy</th>
+								<th>Warunki testu, dane wejściowe i czynności</th>
+								<th>Oczekiwane wyniki</th>
+								<th>Kryteria akceptacji</th>
+								<th>Uwagi</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="3">AF1 - Rejestr abonentów - dodawanie danych</td>
+								<td><b>Warunki testu:</b> uruchomiony system</td>
+								<td rowspan="3">Wprowadzone dane zostały zapisane w bazie danych</td>
+								<td rowspan="3">Zapisane dane są identyczne z wprowadzonymi</td>
+								<td rowspan="3">Sprawdzić przy dodawaniu z pliku i z konsoli</td>
+							</tr>
+							<tr>
+								<td><b>Dane wejściowe:</b> zdefiniowane linie telefoniczne, parametry systemu</td>
+							</tr>
+							<tr>
+								<td><b>Czynności:</b> dodanie i edycja danych abonenta (trzech abonentów)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<hr>
+
+				<h2>Scenariusze testowe</h2>
+
+				<b>Scenariusz testowania</b> – systematyczna obserwacja oczekiwanegodziałania programu; najczęściej -
+				sekwencja przypadków testowych.
+				<p>Przykład:</p>
+
+				<div class="table-wrapper">
+					<table class="alt">
+						<thead>
+							<th colspan="2">Testy końcowe (akceptacyjne) systemu billingowego centrali telefonicznej
+								zaplanowano w następującej kolejności:</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td><b>Identyfikator</b></td>
+								<td><b>Opis</b></td>
+							</tr>
+							<tr>
+								<td>AZ2</td>
+								<td>Hasło dostępu (logowanie)</td>
+							</tr>
+							<tr>
+								<td>AF1</td>
+								<td>Rejestr abonentów</td>
+							</tr>
+							<tr>
+								<td>AF2</td>
+								<td>Rejestr linii telefonicznych</td>
+							</tr>
+							<tr>
+								<td>AF3</td>
+								<td>Rejestracja parametrów taryfikacyjnych</td>
+							</tr>
+							<tr>
+								<td>AF5</td>
+								<td>Naliczenie opłat</td>
+							</tr>
+							<tr>
+								<td>AW1</td>
+								<td>Czas naliczenia należności dla wszystkich abonentów za dany miesiąc</td>
+							</tr>
+							<tr>
+								<td>AF4</td>
+								<td>Rejestr faktur</td>
+							</tr>
+							<tr>
+								<td>AI1</td>
+								<td>Łatwość obsługi</td>
+							</tr>
+							<tr>
+								<td>AZ1</td>
+								<td>Tworzenie kopii i odtwarzanie</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<hr>
+
+				<h2>Strategie doboru scenariuszy testowych</h2>
+				Typowe strategie:
+				<ol>
+					<li>testy statyczne (analiza, dowodzenie poprawności) i dynamiczne</li>
+					<li>wybrane ścieżki przepływu sterowania</li>
+					<li>sekwencja logiczna, np. według
+						<ul>
+							<li>kolejnych działań (diagramów czynności, scenariuszy biznesowych)</li>
+							<li>przypadków użycia</li>
+						</ul>
+					</li>
+					<li>rozszerzanie obszarów testowania
+						<ul>
+							<li>zwykle przy sprawdzaniu poprawności działania</li>
+						</ul>
+					</li>
+					<li>zawężanie obszarów testowania
+						<ul>
+							<li>przy lokalizacji usterki</li>
+						</ul>
+					</li>
+					<li>negatywny scenariusz testowy (testy błędów)
+						<ul>
+							<li>oparty na niewłaściwych danych testowych</li>
+						</ul>
+					</li>
+				</ol>
+
+				<hr>
+
+				<h2>Analiza statyczna</h2>
+				<p>
+					Statyczna analiza kodu to proces, w którym w oparciu o istniejące reguły analizujemy kod źródłowy w
+					celu:
+					<ul>
+						<li>stwierdzenia jego właściwości</li>
+						<li>wychwycenia potencjalnych problemów związanych z kodem aplikacji</li>
+						<li>dowodzenia poprawności programów, produktów etapowych</li>
+					</ul>
+				</p>
+				<p>
+					<h3>Przykłady:</h3>
+					<ul>
+						<li>Wyszukiwanie w kodzie źródłowym konstrukcji, które można
+							uznać za potencjalnie niewłaściwe</li>
+						<li>Obliczanie metryk kodu źródłowego. Dostarczają nam informacji
+							o jakości kodu źródłowego na podstawie danych statystycznych</li>
+						<li>Śledzenie zgodności, wyszukiwanie braków</li>
+						<li>Formalne metody, opierające się na matematycznej definicji
+							zachowania programu. Formalne metody wymagają zwykle
+							opisywania aplikacji i/lub jej właściwości
+						</li>
+					</ul>
+				</p>
+				<p><b>Nieodzowne jest wsparcie narzędziowe</b> – narzędzia na podstawie dostarczonych
+					reguł analizują np. pliki źródłowe w celu wychwycenia potencjalnych problemów
+					związanych z kodem aplikacji lub obliczenia wartości metryk</p>
+
+				<p>
+					<h3>Narzędzia:</h3>
+					<ul>
+						<li>Checkstyle</li>
+						<li>Jdepend</li>
+						<li>PMD</li>
+						<li>FindBugs</li>
+					</ul>
+				</p>
+				<b>Analiza statyczna kodu programu pozwala na:</b>
+				<ul>
+					<li>uniknięcie typowych usterek podczas programowania</li>
+					<li>zwiększenie wydajności i stabilności poprzez zasady oparte
+						na dobrych praktykach</li>
+					<li>dostarczenie struktury do zarządzania standardami kodu</li>
+					<li>wymuszenie własnych zasad pisania kodu</li>
+				</ul>
+
+				<hr>
+
+				<h2>Testowanie dynamiczne</h2>
+				Analizujemy dynamikę, zachowanie działającego bądź
+				symulowanego systemu w celu stwierdzenia (nie)zgodności
+				z oczekiwaniami lub zademonstrowania działania:
+
+				<ul>
+					<li>Testowanie <b>“czarnej skrzynki”</b> (ang. black box testing)
+						<ul>
+							<li>funkcjonalne – oparte na specyfikacji, ukierunkowane
+								na zewnętrzny obraz błędnego działania</li>
+						</ul>
+					</li>
+					<li>Testowanie <b>“białej skrzynki”</b> (ang. white box testing)
+						<ul>
+							<li>
+								strukturalne – wykorzystuje wiedzę o wewnętrznej strukturze modułu
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<hr>
+
+				<h2>Testowanie czarnej skrzynki (funkcjonalne)</h2>
+
+				<p>
+					<h3>Idea testowania</h3>
+					<p>
+						Testowanie na podstawie specyfikacji ukierunkowane na:
+						<ol>
+							<li>błędne wykonania operacji</li>
+							<li>błędy interfejsów</li>
+							<li>błędy w dostepie do danych zewnętrznych</li>
+							<li>błedy wydajnościowe</li>
+							<li>błędy inicjalizacji i terminacji</li>
+						</ol>
+					</p>
+				</p>
+
+				<h3>Dobór przypadków testowych</h3>
+
+				Intuicje przy doborze przypadków testowych:
+				<ul>
+					<li>sprawdzić, czy program posiada wyspecyfikowaną właściwość</li>
+					<li>sprawdzić, gdy dane wejściowe reprezentują sytuacje typowe</li>
+					<li>sprawdzić, czy moduł nie jest szczególnie wrażliwy na pewne „specjalne”
+						dane wejściowe</li>
+					<li>sprawdzić granice dziedzin danych wejściowych</li>
+					<li>sprawdzić zachowanie programu dla limitów rozmiaru i częstości
+						danych (wartości granicznych)</li>
+					<li>sprawdzić, jakie skutki spowodują specyficzne „specjalne” kombinacje
+						danych wejściowych</li>
+					<li>sprawdzić typowe scenariusze używania rozpatrywanego obiektu (modułu)</li>
+				</ul>
+
+				<hr>
+
+				<h2>Podział na klasy równoważności</h2>
+
+				<p>Różne przypadki wykonania programu można pogrupować tak, że poprawne działanie dla reprezentanta
+					grupy oznacza poprawne działanie dla całej grupy.</p>
+				Podział na klasy równoważności:
+				<ul>
+					<li>dziedziny wejściowej </li>
+					<li>dziedziny wyjściowej</li>
+				</ul>
+
+				<h3>Przykład:</h3>
+
+				<p>
+					<p>
+						PARAMETR 1: REAL<br>
+						PARAMETR 2: INTEGER , &ge;5 , &ge;11<br>
+					</p>
+
+					<p>
+						KLASY<br>
+						1 : &lt; MINREAL , 0), 0 , (0, MAXREAL><br>
+						2 : &lt; MININT , 4> , &lt; 5, 10 >, &lt; 11, MAXINT><br>
+					</p>
+					<p>
+						PRZYPADKI TESTOWE:<br>
+						( -3.75 , 3 ) ( 0, -378) (127800, -13759)<br>
+						( -275.93 , 6) ( 0 ,7) ( 1.999 , 10)<br>
+						( -0.093 , 12) ( 0 , 11) ( 476, 1111119)<br>
+					</p>
+				</p>
+
+				<hr>
+
+				<h2>Metody specjalnych wartości</h2>
+
+				<p>Sprawdzenie działania programu dla wartości granicznych, wyjątkowych,
+					pozwalających jak najlepiej scharakteryzować badaną funkcję:</p>
+				<ul>
+					<li>operacje arytmetyczne
+						<ul>
+							<li>liczby pierwsze, jedynka, zero, MIN i MAX wartości operandów</li>
+						</ul>
+					</li>
+					<li>konwersje typów
+						<ul>
+							<li>podstawienia, argumenty wywołania, wartości zwracane, konwersje
+								niejawne, konwersje jawne</li>
+						</ul>
+					</li>
+					<li>tablice
+						<ul>
+							<li>obiekt pusty, prawidłowe i nieprawidłowe wartości indeksów</li>
+						</ul>
+					</li>
+					<li>listy
+						<ul>
+							<li>lista pusta, lista jednoelementowa, lista wieloelementowa</li>
+						</ul>
+					</li>
+				</ul>
+
+				<hr>
+
+				<h2>Analiza wartości granicznych</h2>
+				<h3>Obserwacja</h3>
+				<ul>
+					<li>błędne zachowania programu częściej występują na granicach
+						dziedziny wejściowej
+					</li>
+				</ul>
+				<ul>
+					<li>
+						Stąd wskazówki dla doboru testów:
+						<ul>
+							<li>jeżeli dana wejściowa przebiega zakres między X i Y, to testuj dla X, dla Y
+								oraz dla wartości bezpośrednio sąsiadujących z X i Y
+							</li>
+							<li>jeżeli dziedzina wejściowa obejmuje skończony zbiór uporządkowanych wartości,
+								to testuj dla wartości MAX i MIN oraz w ich bezpośrednim sąsiedztwie</li>
+							<li>powyższe zasady należy również zastosować do wartości wyjściowych, np. aby
+								wyprodukować wartość MAX i MIN na wyjściu
+							</li>
+							<li>jeżeli zadano ograniczenia pojemności modułu (ilość danych, obciążenie), to
+								powinny być one również przetestowane</li>
+						</ul>
+					</li>
+				</ul>
+
+				<hr>
+
+				<h2>Metody Monte-Carlo</h2>
+				<ul>
+					<li>sprawdzenie działania programu w oparciu o generowanie losowych
+						wartości wejściowych</li>
+					<li>sprawdzenie działania programu dla możliwie najbardziej typowych
+						i najczęściej spotykanych wartości wejściowych
+					</li>
+					<li> przydatne szczególnie do testowania programów o dużej liczbie danych
+						wejściowych i nietrywialnych obliczeniach
+					</li>
+				</ul>
+				<h3>
+					Generator liczb pseudolosowych &rarr; Filtr odwzorowujący &rarr; Kod programu = Dziennik (log) testu
+					(rejestracja i analiza wartości)
+				</h3>
+				Co daje:
+				<ul>
+					<li>łatwość automatyzacji</li>
+					<li>uproszczenie procesur generowania danych testowych</li>
+				</ul>
+
+				<hr>
+
+				<h2>Testowanie białej skrzynki (strukturalne)</h2>
+				Testowanie z wykorzystaniem wiedzy o strukturze wewnętrznej
+				badanego obiektu (programu)
+
+				<ul>
+					<li>wykonanie wszystkich niezależnych ścieżek sterowania w programie</li>
+					<li>wykonanie wszystkich decyzji dla warunku: True i False</li>
+					<li>wykonanie wszystkich pętli w programie dla warunku granicznego (0 razy, Max razy) oraz dla
+						przypadku w założonych granicach powtórzeń pętli (0&lt;n&lt;Max)</li>
+					<li>wykonanie dostępu do wszystkich wewnętrznych struktur danych</li>
+				</ul>
+
+				<hr>
+
+				<h2>Testowanie ścieżek</h2>
+				<ul>
+					<li>Struktura przepływu sterowania w programie może być
+						reprezentowana w postaci grafu przepływu sterowania</li>
+					<li>Niezależna ścieżka - różni się co najmniej jedną instrukcją lub
+						warunkiem od innych ścieżek</li>
+					<li>Liczba cyklomatyczna programu – podaje liczbę niezależnych
+						ścieżek w grafie przepływu sterowania programu</li>
+				</ul>
+
+				<h3>Liczba cyklomatyczna jest równa liczbie rozłącznych obszarów w grafie przepływu sterowania.</h3>
+
+				<div class="box alt">
+					<div class="row gtr-uniform">
+						<div class="col-6">
+							<span class="image fit"><img src="images/cyklomaty 1.png" alt="Cyklomaty 1"></span>
+						</div>
+						<div class="col-6">
+							<span class="image fit"><img src="images/cyklomaty 2.png" alt="Cyklomaty 2"></span>
+						</div>
+					</div>
+				</div>
+				<p>
+					C = E - N + 2<br>
+					gdzie<br>
+					E – liczba łuków<br>
+					N – liczba węzłów<br>
+					Liczba cyklomatyczna jest równa liczbie łuków minus liczba węzłów plus 2
+				</p>
+
+				<p>
+					C = PR + 1<br>
+					PR – liczba węzłów decyzyjnych (warunków logicznych)<br>
+					Liczba cyklomatyczna jest o 1 większa od liczby węzłów decyzyjnych
+				</p>
+
+				<hr>
+
+				<h2>Testowanie ścieżek - budowa scenariuszy testowych</h2>
+
+				<ul>
+					<li>zbuduj graf przepływu sterowania</li>
+					<li>określ złożoność cyklomatyczną</li>
+					<li>dobierz zestaw niezależnych ścieżek</li>
+					<li>dobierz przypadki testowe (dane wejściowe),
+						które wymuszają wykonanie tych ścieżek</li>
+				</ul>
+
+				<h3>Uwaga: należy rozważyć wspomaganie narzędziowe</h3>
+
+				<p>
+					<h3>Miara: Pokrycie testami</h3>
+					Tc = N / C*100%<br>
+					Tc – pokrycie (procent przetestowanych ścieżek)<br>
+					N – liczba przetestowanych niezależnych ścieżek<br>
+					C – liczba cyklomatyczna badanego programu<br>
+				</p>
+
+				<hr>
+
+				<h2>Testowanie warunków</h2>
+
+				<ul>
+					<li><h3>Warunek prosty</h3>
+						<ul>
+							<li>BOOLEAN VAR | RELATIONAL EXPRESSION
+							</li>
+							<li>
+								B X>7 gdzie B: BOOLEAN, X:INTEGER
+							</li>
+						</ul>
+					</li>
+					<li><h3>Warunek złożony</h3>
+						<ul>
+							<li>warunki proste połączone operatorami logicznymi AND, OR
+								<ul>
+									<li>przetestowanie każdego warunku oraz każdej ścieżki wychodzącej z tego warunku
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><h3>Cel testowania</h3>
+						<ul>
+							<li>przetestowanie każdego warunku oraz każdej ścieżki wychodzącej
+								z tego warunku</li>
+						</ul>
+					</li>
+				</ul>
+				<h3>UWAGA: optymalizacja kodu powoduje, że nie zawsze wszystkie warunki proste są
+					obliczane podczas wyznaczania wartości warunku złożonego.</h3>
+
+					<hr>
+
+				<h2>Testowanie przepływu (łańcuchów) danych</h2>
+				<h3>to jest nudne pomiń</h3>
+
+				<ul>
+					<li>Cel
+						<ul>
+							<li>testowanie spójności pomiędzy definicją i użyciem zmiennych</li>
+						</ul>
+					</li>
+					<li>
+						Dla każdego zdania S w programie:
+						<ul>
+							<li>DEF(S) – zbiór zmiennych X takich, że w S znajduje się
+								nadanie wartości X</li>
+							<li>USE(S’) - zbiór zmiennych X takich, że w S’ znajduje się
+								użycie X</li>
+							<li>Istnieje ścieżka (łańcuch) od S do S’, który nie redefiniuje X</li>
+							<li>Strategia testowania:
+								<ul>
+									<li>Każdy łańcuch jest wykonany przynajmniej raz</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<hr>
+
+				<h2>Testowanie pętli</h2>
+
+				<h3>Badane przypadki dla pętli o N przebiegach</h3>
+
+				<ul>
+					<li>ominięcie pętli</li>
+					<li>jeden przebieg przez pętlę</li>
+					<li>dwa przebiegi przez pętlę</li>
+					<li>M przebiegów, M&lt;N</li>
+					<li>N-1, N i N+1 przebiegów</li>
+				</ul>
+				druga część od 33 slajdu :)
+			</div>
+
+		</section>
+
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Naumowicz - All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets_qa/js/jquery.min.js"></script>
+	<script src="../assets_qa/js/jquery.scrollex.min.js"></script>
+	<script src="../assets_qa/js/jquery.scrolly.min.js"></script>
+	<script src="../assets_qa/js/browser.min.js"></script>
+	<script src="../assets_qa/js/breakpoints.min.js"></script>
+	<script src="../assets_qa/js/util.js"></script>
+	<script src="../assets_qa/js/main.js"></script>
+
+</body>
+
+</html>
