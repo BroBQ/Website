@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Encyklopedia QA</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets_qa/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets_qa/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Encyklopedia QA</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Strona główna</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Wstęp do wyrażeń regularnych - regex (podstawy)</h1>
+
+				<p>
+					Wyrażenia regularne to zapisane w specjalny sposób ustalenia dotyczące jak dane wyrażenie ma
+					wyglądać.
+					Przykładem jest kod pocztowy. Wiemy, że musi posiadać formę dwóch i 3 cyfr oddzielonych myślnikiem.
+				</p>
+
+				<p>80-188</p>
+
+
+				<p>
+					Jak za pomocą wyrażenia regularnego sprawdzić, czy wpisany przez użytkownika tekst ma format kodu
+					pocztowego? Wyjaśniamy:
+				</p>
+
+				Na początek potrzebujemy dwóch cyfr:
+
+				<ul>
+					<li>Jedna cyfra - \d</li>
+					<li>Dwie cyfry - \d\d</li>
+					<li>Większa ilość cyfr będzie następowała poprzez dodanie kolejny raz \d.</li>
+				</ul>
+
+				<p>
+					Gdy posiadamy już dwie cyfry, przyszedł czas na myślnik. Regexp posiada wiele sposobów na zapisanie
+					znaków, niektóre nie mogą być używane bezpośrednio w wyrażeniu. Znak kropki (.) nie będzie uznawany
+					jako kropka, a jako dowolny znak. Na szczęście myślnik nie posiada obostrzeń i w wyrażeniu
+					regularnym myślnik oznacza myślnik na danej pozycji.
+				</p>
+
+				<p>Więc do tej pory mamy:</p>
+
+				<code>\d\d-</code>
+
+
+				<p>Dokańczamy wyrażenie regularne:</p>
+
+				<code>\d\d-\d\d\d</code>
+
+				<p>
+					Co odpowiada nam cyfra cyfra myślnik cyfra cyfra cyfra, więc wiemy, iż podany wcześniej kod pocztowy
+					będzie pasować.
+				</p>
+
+				<hr>
+
+				<h2>Testy wyrażeń</h2>
+
+				<p>Dobrą praktyką będzie sprawdzanie, czy nasze wyrażenie regularne nie pominęło żadnych założeń, o
+					których zapomnieliśmy. Skorzystamy ze strony <a href="regex101.com">regex101.com</a>.</p>
+
+				W skrócie opisując funkcjonalność strony:
+
+				<ul>
+					<li>FLAVOR - występują 4 rodzaje wyrażeń regularnych, należy wybrać odpowiednią dla naszego języka,
+						choć PCRE jest standardem i spotkamy się z nim najczęściej</li>
+					<li>REGULAR EXPRESSION - pole, w którym wpisujemy nasze wyrażenie regularne, po prawej znajduje się
+						flaga,
+						zapoznaj się z jej funkcjonalnością</li>
+					<li>TEST STRING - miejsce na wpisanie kilka przykładowych tekstów, by sprawdzić, czy nasze wyrażenie
+						chwyta
+						odpowiedni tekst</li>
+					<li>EXPLANATION - wyjaśnienie odnośnie utworzonego Regexp</li>
+					<li>MATCH INFORMATION - tutaj otrzymujemy informacje o tym jak i co zostało znalezione</li>
+					<li>QUICK REFERENCE - spis wszystkich możliwości i pomoc jak wykorzystuje się daną funckję -
+						najważniejsze
+						miejsce dla nauki (nie licząc innych tutoriali)</li>
+
+				</ul>
+
+				<hr>
+
+				<h2>Wersja dla leniwych</h2>
+
+				<p>Wyobraźmy sobie wyrażenie regularne na numer konta bankowego. Wpisywanie \d wiele razy jest męczące.
+					Jest na to sposób. Dla uproszczenia przyjmiemy, że sprawdzamy numer 10 cyfrowy.</p>
+
+				<p>0123456789</p>
+
+				<p>Skorzystamy z klamer ostrych {}. Takie klamry pozwalają nam na określenie przedziałów, czyli ile razy
+					dany znak ma występować.</p>
+
+				<code>\d{10}</code>
+
+				<p>Powyższe oznacza pojedynczą cyfrę, ale 10 razy jedną po drugiej.
+				</p>
+
+				<p>Dla liczby:</p>
+
+				<code>0123 456 789</code>
+
+
+				<p>Zastosujemy wyrażenie:</p>
+
+				<code>\d{4} \d{3} \d{3}</code>
+
+				<hr>
+
+				<h2>Co, jeśli potrzeba jednego razu 2 a drugiego razu 3 cyfry?</h2>
+
+				<p>Skorzystamy w tym wypadku również z klamer. Dla przykładu:</p>
+
+				<p>145-127 lub 78-414</p>
+
+				<code>\d{2,3}-\d{3}</code>
+
+				<p>{2,3} oznacza od 2 do trzech wystąpień. Występuje również {3,}, co oznacza 3 lub więcej wystąpień,
+					{0,} 0 lub więcej. Co ważne przedział działa tylko dla jednego wcześniejszego znaku. Gdy chcemy
+					ponownie założyć, że następny znak również ma być powielony, trzeba zdefiniować następny przedział.
+				</p>
+
+
+				<hr>
+
+				<h2>Przedziały</h2>
+
+				<p>Możliwe jest wykluczenie niektórych cyfr poprzez stosowanie przedziałów. [0-9] jest równoznaczne z
+					\d,	lecz za pomocą \d nie jest możliwe zapisanie [1-9]. W ten sposób zapiszemy, aby np. pierwsza cyfra
+					nie	mogła być nigdy zerem.</p>
+
+				<p>103-123</p>
+
+				<code>[1-9][0-9]{2}-\d{3}</code>
+
+				<p>Jak widać na powyższym przykładzie, sposoby zapisu można mieszać.</p>
+
+				<hr>
+
+				<h2>Znaki</h2>
+
+				<p>Mamy możliwość określić jakie znaki mogą występować w naszym wyrażeniu.</p>
+
+				<ul>
+					<li>[a-z] - litery od a do z</li>
+					<li>[A-Z] - litery od A do Z</li>
+					<li>[a-zA-Z] - małe i duże litery</li>
+					<li>[abc] - litera albo a, albo b, albo c</li>
+					<li>[b-zA-Z] - małe i duże litery z wyjątkiem a</li>
+				</ul>
+
+				<p>Ala ma kota</p>
+
+				<code>[A-Z][a-z]{2} [a-z]{2} [a-z]{4}</code>
+
+				<hr>
+
+				<h2>Polskie znaki</h2>
+
+				<p>Polskie znaki nie są bezpośrednio dostępne w wyrażeniach, trzeba utworzyć je samemu.</p>
+
+				<ul>
+					<li>[a-zżźąęćńół]</li>
+					<li>[A-ZŻŹĘĄĆŃÓŁ]</li>
+					<li>i wiele innych kombinacji</li>
+				</ul>
+
+				<p>Nie można zapomnieć o żadnym znaku specjalnym, chyba że mamy taki zamiar.</p>
+
+				<hr>
+
+				<h2>Korzystanie ze znaków używanych normalnie w regexach</h2>
+
+				<p>Wykorzystuje się do tego znak \ poprzedzający znak niedozwolony.</p>
+
+				<p>Ala ma kota.</p>
+
+				<code>[A-Z][a-z]{2} [a-z]{2} [a-z]{4}\.</code>
+
+				<p>
+					regex101.com ostrzeże, gdy zostanie użyty zastrzeżony znak, musisz być jednak czujny, gdyż takich
+					znaków znajduje się więcej. Będzie to $, ^, (, ), {, }, [, ], *, +, \ i każde z nich ma swoje
+					określone zadanie.
+				</p>
+
+				<hr>
+
+				<h2>Wykluczenie z przedziału</h2>
+
+				<p>Mamy możliwość wykazania jakie znaki w danym przedziale mają nie występować:</p>
+
+				<ul>
+					<li>[^abc] - wszystkie znaki z wyjątkiem a, b, c</li>
+					<li>[^a-z] - wszystkie znaki oprócz przedziału a do z</li>
+					<li>[^0-2] - wszystkie znaki oprócz cyfr od 0 do 2</li>
+				</ul>
+
+				<hr>
+
+				<h2>Wyrażenie regularne - brane dosłownie</h2>
+
+				<p>W wyrażeniu regularnym można przekazać cały szukany string (pamiętając, aby nie korzystać ze znaków
+					niedozwolonych).</p>
+
+				<p>Ala ma kota.</p>
+
+				<code>Ala ma kota\.</code>
+
+				<hr>
+
+				<h2>Wykorzystanie wyrażeń regularnych</h2>
+
+				<p>Zazwyczaj wyrażeń regularnych korzysta się przy:</p>
+
+				<ul>
+					<li>wyciąganiu jakichś znaków z danego stringa</li>
+					<li>sprawdzenie, czy podany string pasuje do wyrażenia</li>
+				</ul>
+
+				<hr>
+
+				<h2>Inne przydatne</h2>
+
+				<ul>
+					<li>\n - nowa linia</li>
+					<li>. - dowolny znak</li>
+					<li>\w - słowo o dowolnej długości</li>
+				</ul>
+
+
+				<hr>
+
+				<h2>Co dalej?</h2>
+
+				<p>Skorzystać z innych tutoriali, ćwiczyć samemu, nauczyć się zauważać w programowaniu, kiedy warto coś
+					zweryfikować.</p>
+
+			</div>
+
+		</section>
+
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+							alt="Creative Commons License" style="border-width:0"
+							src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under
+					a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+						Attribution-ShareAlike 4.0 International License</a></li>
+				<li>Naumowicz</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets_qa/js/jquery.min.js"></script>
+	<script src="../assets_qa/js/jquery.scrollex.min.js"></script>
+	<script src="../assets_qa/js/jquery.scrolly.min.js"></script>
+	<script src="../assets_qa/js/browser.min.js"></script>
+	<script src="../assets_qa/js/breakpoints.min.js"></script>
+	<script src="../assets_qa/js/util.js"></script>
+	<script src="../assets_qa/js/main.js"></script>
+
+</body>
+
+</html>
