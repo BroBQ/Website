@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Encyklopedia QA</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets_qa/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets_qa/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="index.html" class="title">Encyklopedia QA</a>
+		<nav>
+			<ul>
+				<li><a href="index.html">Strona główna</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">TDD - Test Driven Development + testy jednostkowe</h1>
+
+				TDD to odejście rozwoju oprogramowania, w którym najpierw pisze się testy jednostkowe do
+				funkcjonalności, a następnie rozwija się funkcjonalność.
+
+				<hr>
+
+				<h2>Kroki realizowane podczas TDD w skrócie:</h2>
+
+				<ul>
+					<li>1. Tworzenie testów jednostkowych.</li>
+					<li>2. Uruchomienie testów, testy nie mogą przejść.</li>
+					<li>3. Rozwój funkcjonalności.</li>
+					<li>4. Uruchomienie testów, a jeżeli jakikolwiek test nie przeszedł, poprawianie kodu
+						funkcjonalności do momentu poprawnego przejścia wszystkich testów.</li>
+					<li>5. Opcjonalnie można dokonać refactoringu pamiętając, aby testy wciąż przechodziły.</li>
+				</ul>
+
+
+				<h2>Dobre cechy testów jednostkowych</h2>
+
+				<ul>
+					<li><b>Szybkość</b> - test powinien się wykonać jak najszybciej, test powyżej 1 sekundy jest zbyt
+						wolny.</li>
+					<li><b>Izolacja</b> - żaden z testów jednostkowych nie powinien wpływać na inny test, ani uruchamiać
+						inny test.</li>
+					<li><b>Powtarzalność</b> - test bez względu na środowisko musi działać w identyczny sposób i dawać
+						takie same wyniki.</li>
+					<li><b>Asercja</b> - w teście jednostkowym musi zostać dokonana asercja, inaczej test zawsze będzie
+						przechodził.</li>
+					<li><b>Niezależność</b> - jeden test oznacza jedną testowaną wartość, nie powinno korzystać się z
+						pętli ani tablic w teście jednostkowym (chyba, że są to testy parametryzowane).</li>
+				</ul>
+
+				<h2>Tworzenie testów jednostkowych</h2>
+
+				
+
+				<p>
+					Testy jednostkowe tworzy się opierając na zasadzie Arrange-Act-Assert (w skrócie AAA). Dobrze, że
+					nie AA, dziwnie by brzmiało być specjalistą od AA.
+				</p>
+
+				<ul>
+					<li><b>Arrange</b> - przygotowanie klasy, stworzenie obiektu.</li>
+					<li><b>Act</b> - wywołanie metody, którą chcemy przetestować.</li>
+					<li><b>Assert</b> - sprawdzenie czy otrzymana wartość na kroku act jest poprawna.</li>
+				</ul>
+
+
+				<h2>Przykład testów jednostkowych</h2>
+
+				<p>
+					Wykorzystuję do testu JavaScript framework Jest.
+				</p>
+
+				
+				<pre>
+				<code>
+//Testowana klasa
+class DoTestu {
+	constructor(imie, wiek) {
+		//przypisujemy wartości z konstruktora do pól klasy
+		this.imie = imie;
+		this.wiek = wiek;
+	}
+
+	pobierzWiek() {
+		return this.wiek;
+	}
+
+	pobierzImie() {
+		return this.imie;
+	}
+}
+//eksportujemy klasę by stworzyć obiekt w innym miejscu
+module.exports = DoTestu;
+				</code>
+				</pre>
+
+				<p>Dajemy teraz testy:</p>
+
+				<pre>
+				<code>
+//przypisujemy do zmiennej klasę, require zawiera ścieżkę do testowanej klasy
+const DoTestu = require('./DoTestu');
+
+//wywołanie testu i nadanie mu opisu
+test('test sprawdzający imię', () => {
+	const doTestu = new DoTestu('Janusz', 44);
+	expect(doTestu.pobierzImie()).toBe('Janusz');
+});
+
+test('test sprawdzający wiek', () => {
+	const doTestu = new DoTestu('Karina', 37);
+	expect(doTestu.pobierzWiek()).toBe(37);
+});
+				</code>
+				</pre>
+
+				<p>Pamiętaj, że `Jest` oferuje większą gamę poleceń i pewne rzeczy można skonfigurować (np. zobacz
+					funckję describe https://jestjs.io/docs/en/api#describename-fn). Zapoznaj się z dokumentacją w razie
+					potrzeby skorzystania z większej funkcjonalności.</p>
+
+				<p>Proponuję następująca strukturę katalogów:</p>
+				<pre>
+				<code>
+Projekt
+|
+|
+----src
+|   |
+|   |----DoTestu.js
+|   |
+|   |----test
+|        |
+|        |----DoTestu.test.js
+				</code>
+				</pre>
+
+				<p>Pamiętaj, aby był zainstalowany pakiet `jest`.</p>
+
+				<p>W katalogu projektu wykonujemy polecenie w konsoli `npx jest`. Otrzymamy wynik testów.
+					Aby wykonać testy i jednocześnie wygenerować raport z pokrycia testów skorzystaj z polecenia `npx
+					jest --coverage`.</p>
+
+				<p>Pro tip:</p>
+
+				<p>
+					npx uruchamia dany pakiet
+					jest to równoznaczne z przejściem do katalogu, w którym znajduje się plik uruchamiający dany moduł
+					(plik .bat, .sh, .ps1) i uruchomienie danego skryptu.
+				</p>
+
+				<hr>
+
+				<h2>TDD w akcji</h2>
+
+				<p>Rozważamy scenariusz:</p>
+
+				<p>Stwórz funkcję do przetwarzania danych wprowadzanych przez użytkownika. Będzie to kod pocztowy.</p>
+
+				<ul>
+					<li>kod pocztowy może być wporwadzany z myślnikiem lub bez</li>
+					<li>upewnij się, że ma format \d\d-\d\d\d lub \d{5}</li>
+					<li>gdy wprowadzony kod jest niepoprawny zwróć false</li>
+					<li>gdy kod jest poprawny zwróć go w formacie \d\d-\d\d\d</li>
+				</ul>
+
+				<p>Tworzymy testy</p>
+				<pre>
+				<code>
+const PostalCode = require('../PostalCode');
+
+test('postal code is not correct', () => {
+	const postalCode = new PostalCode();
+
+	expect(postalCode.test('888-88')).toBe(false);
+});
+
+test('postal code is in format \d\d\d\d\d', () => {
+	const postalCode = new PostalCode();
+
+	expect(postalCode.test('88888')).toBe('88-888');
+});
+
+test('postal code is in format \d\d-\d\d\d', () => {
+	const postalCode = new PostalCode();
+
+	expect(postalCode.test('88-888')).toBe('88-888');
+});
+
+test('postal code is text', () => {
+	const postalCode = new PostalCode();
+
+	expect(postalCode.test('Gdańsk')).toBe(false);
+});
+
+test('postal code is empty text', () => {
+	const postalCode = new PostalCode();
+
+	expect(postalCode.test('')).toBe(false);
+});
+
+test('postal code is undefined', () => {
+	const postalCode = new PostalCode();
+
+	expect(postalCode.test(undefined)).toBe(false);
+});
+//spróbuj wymyśleć kilka kolejnych przypadków
+				</code>
+			</pre>
+
+				<p>Teraz sprawdzamy działanie testów i przystępujemy do tworzenia funkcjonalności.</p>
+
+				<p>Ważna uwaga, nie tworzymy kodu pod testy jednostkowe! Nie można się sugerować kodem w testach
+					jednostkowych, jest to zła praktyka. Korzystaj z dołączonej dokumentacji do zadania. Testy są tylko
+					sprawdzeniem czy nasz kod jest zgodny z logiką.</p>
+				<pre>
+				<code>
+class PostalCode {
+	test (postalCode) {
+		const regexp = new RegExp('\d\d-?\d\d\d');
+		if (regexp.test(postalCode)) {
+			if (postalCode[2] === '-') {
+				return postalCode;
+			} else {
+				return postalCode.slice(0, 2) + '-' + postalCode.slice(2);
+			}
+		} else {
+			return false;
+		}
+	}
+}
+				</code>
+				</pre>
+
+				<p>Sprawdzamy czy kod przeszedł wszystkie testy (zakładam, że tak; możesz sprawdzić).</p>
+
+				<p>Dodatkowe informacje</p>
+				<ul>
+					<li>Pokrycie testami jednostkowymi składa się ile ścieżek kodu zostało przetestowane. Jeżeli mamy
+						jednego if, należy sprawdzić warunek prawidłowy i nieprawidłowy.</li>
+					<li>Kiedy w if, znajduje się zakres np.: value > 1 && value &lt; 4, występuje kilka opcji. Zazwyczaj
+						wystarczy przetestować jeden przypadek np.: 2. Do pełnego pokrycia trzeba przetestować przypadek
+						2 i 3.</li>
+					<li>Utrzymanie bardzo wysokiego pokrycia testami może być nieopłacalne. Często celuje się w około
+						90%, choć niższe wartości są również akceptowalne. Nie liczy się ilość, a jakość.</li>
+					<li>Należy pamiętać, aby weryfikować reguralnie testy jednostkowe i w razie potrzeby dodawać kolejne
+						przypadki.</li>
+					<li>Po opanowaniu testów jednostkowych należy następnie opanować testy integracyjne (Mock).</li>
+					<li>Dobrym kursem TDD jest <a
+							href="https://dariuszwozniak.net/posts/kurs-tdd-1-wstep/">https://dariuszwozniak.net/posts/kurs-tdd-1-wstep/</a>
+					</li>
+				</ul>
+
+			</div>
+
+		</section>
+
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+							alt="Creative Commons License" style="border-width:0"
+							src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> This work is licensed under
+					a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+						Attribution-ShareAlike 4.0 International License</a></li>
+				<li>Naumowicz</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets_qa/js/jquery.min.js"></script>
+	<script src="../assets_qa/js/jquery.scrollex.min.js"></script>
+	<script src="../assets_qa/js/jquery.scrolly.min.js"></script>
+	<script src="../assets_qa/js/browser.min.js"></script>
+	<script src="../assets_qa/js/breakpoints.min.js"></script>
+	<script src="../assets_qa/js/util.js"></script>
+	<script src="../assets_qa/js/main.js"></script>
+
+</body>
+
+</html>
